@@ -38,7 +38,10 @@ module OmniAuth
           id_token,
           client.idp_configuration.public_key,
           true,
-          algorithm: 'RS256'
+          {
+            leeway: 120,
+            algorithm: 'RS256'
+          }
         ).first
       end
     end
